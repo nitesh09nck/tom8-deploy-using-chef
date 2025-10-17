@@ -29,4 +29,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Push to DockerHub
-        run: docker push yourdockerhub/demo:latest
+        run: docker push nitesh09nck/demo:latest
+
+        # << Add your deploy step here >>
+      - name: Deploy to Minikube
+        run: |
+          kubectl apply -f k8s/
